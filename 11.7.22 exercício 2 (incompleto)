@@ -1,0 +1,95 @@
+programa {
+
+		inclua biblioteca Util --> u
+        inteiro matriz[5][6], matrizB[5][6], matrizaux[5][6]
+        inteiro linha, coluna
+
+  funcao inicio() {
+    
+        para(linha = 0; linha <= 4; linha++)
+        {
+        
+        	para(coluna = 0; coluna <= 5; coluna++)
+        	{
+        		
+
+        		matriz[linha][coluna] = u.sorteia(10, 50)
+        			se(coluna <= 5)
+        			{
+        				matrizB[linha][coluna] = matriz[linha][coluna]
+        			}
+
+        				senao
+        	            {
+						    matrizB[linha][coluna] = matriz[linha][coluna]
+        				}
+        		
+        		
+        	}
+        	
+        	
+        }
+        
+        /*para(linha = 0; linha <= 5; linha++)
+        {
+            para(coluna = 0; coluna <= 6; coluna ++)
+            {
+                escreva("matrizB[linha][coluna], " ")
+            }
+            escreva("\n")
+        }*/
+
+        para(linha = 0; linha <= 4; linha++)
+        {
+            para(coluna = 0; coluna <= 5; coluna++)
+            {
+                se(matriz[linha][coluna] > matrizB[linha][coluna])
+                {
+                    matrizaux[linha][coluna] = matriz[linha][coluna]
+                    matriz[linha][coluna] = matrizB[linha][coluna]
+                    matrizB[linha][coluna] = matrizaux[linha][coluna]
+                }
+
+
+            }
+        }
+
+        para(linha = 0; linha <= 4; linha++)
+        {
+            para(coluna = 0; coluna <= 5; coluna ++)
+            {
+                se(coluna < 5){
+                    
+                escreva(matriz[linha][coluna] + " ")
+              
+                }
+                
+                senao
+                {
+                    
+                    escreva(matriz[linha][coluna] + "\n")
+                    
+                }
+            }
+        }
+                escreva("\n")
+                para(linha = 0; linha <= 4; linha++)
+            {
+                    para(coluna = 0; coluna <= 5; coluna ++)
+            {
+                        se(coluna < 5){
+                    
+                escreva(matrizB[linha][coluna] + " ")
+              
+                }
+                
+                senao
+                {
+                    
+                    escreva(matrizB[linha][coluna] + "\n")
+                    
+                }
+            }
+        }
+  }
+}
